@@ -18,7 +18,6 @@ def pathReader():
                 pass
             else:
                 if count == 0:
-                    size = int(line)
                     count += 1
                 elif count >= 1:
                     split = line.split(' ')
@@ -28,5 +27,5 @@ def pathReader():
                     path.append(pos)
                     
     array = np.array(path)
-    print(array)
+    # print(array)
     return array

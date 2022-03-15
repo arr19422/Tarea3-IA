@@ -8,6 +8,7 @@ Autores:
 '''
 from pprint import pprint
 from algorithms import pathReader
+from tsp import *
 
 # TODO Change this to True when program is finished
 showBanner = False
@@ -27,7 +28,7 @@ if showBanner:
     print('     Martín España     Carné: 19258')
     print('     Diego Arredondo   Carné: 19422')
     print('     Alejandra Gudiel  Carné: 19232')
-    print('Fecha: 24-02-2022')
+    print('Fecha: 15-03-2022')
     print('Versión: 1.0')
     print('----------------------------------- \n')
 
@@ -41,7 +42,12 @@ while opcionMenu != 3:
         pass
 
     if opcionMenu == 2:
-        pathReader()
+        path = pathReader()
+        tsp = TSP(path, path[0])
+        tsp.getDistanceMatrix(path)
+        tsp.calcDistance(tsp.path)
+        tsp.calcTSP()
+        tsp.printResults()
         pass
     else:
         print('Saliendo...')
